@@ -32,8 +32,8 @@
    *  **Important** : delete ProjectSetting folder
 * Prepare the git repo
    *  run `git init` to make this project a git repo
-   *  run `git remote add origin "git@gitlab.doc.gold.ac.uk:halsi001/nice.git"`
-   *  pull remote bran `origin/master` to local branch master
+   *  run `git remote add origin "git@gitlab.com:nice-company/vrbrawlers.git"`
+   *  pull remote branch `origin/master` to local branch master
    *  run `git branch dev` to create a new local branch for developing
    *  run `git checkout dev` to switch into local dev branch
    *  pull remote branch `origin/dev` into local dev branch
