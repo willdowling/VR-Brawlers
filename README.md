@@ -25,4 +25,5 @@
     * Go to the Asset Store and search for "Oculus Integration"
     * Click download and then import
     * When prompted with the Unity Package windows to select items to be imported, only tick the boxes to Plugins/Win/OVRPlugin.dll and Plugins/Win64/OVRPlugin.dll
+     ![](https://cdn.discordapp.com/attachments/496427838744952868/549960224992264212/unknown.png)
     * Click "Import", wait for it to finish, then restart Unity and update OVRPlugin. Restart again and it should be fixed.
