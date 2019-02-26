@@ -4,36 +4,25 @@
 
 **Installing GIT LFS**
 
-1.  For Mac users, install Git LFS using [Homebrew](http://brew.sh/). Then go into your local repository and run `brew install git-lfs`
-2.  For Windows users, download the installer from [official website](https://git-lfs.github.com/) and run. After installation, run `git lfs install` in your local repository.
-3. Create new file called `.gitattributes` and copy the following into the file to get you starter. Feel free to add more file extensions and update this README.
-
-``` *.fbx filter=lfs diff=lfs merge=lfs -text
-
-*.psd filter=lfs diff=lfs merge=lfs -text
-
-*.png filter=lfs diff=lfs merge=lfs -text
-
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-
-*.wav filter=lfs diff=lfs merge=lfs -text
-
-*.prefab filter=lfs diff=lfs merge=lfs -text
-
-*.xcf filter=lfs diff=lfs merge=lfs -text
-```
+1.  For Mac users, install Git LFS using [Homebrew](http://brew.sh/). 
+2.  For Windows users, download the installer from [official website](https://git-lfs.github.com/) and run.
 
 
 **Clone the repository**
 
-*  Prepare project folder
-   *  create an empty Unity project
-   *  quit Unity
-   *  **Important** : delete ProjectSetting folder
 * Prepare the git repo
    *  run `git init` to make this project a git repo
+   *  run `git lfs install` on Windows or run `brew install git-lfs` on Mac
    *  run `git remote add origin "git@gitlab.com:nice-company/vrbrawlers.git"`
-   *  pull remote branch `origin/master` to local branch master
-   *  run `git branch dev` to create a new local branch for developing
-   *  run `git checkout dev` to switch into local dev branch
-   *  pull remote branch `origin/dev` into local dev branch
+   *  run `git pull origin master` 
+   *  run `git pull origin develop`
+   *  run `git checkout develop` to switch into local dev branch
+   *  create a new branch with `git branch feature/[branch name]` to start developing
+
+**Known errors**
+
+* If Unity editor keeps asking you to update OVR Plugin and restart do the following:
+    * Go to the Asset Store and search for "Oculus Integration"
+    * Click download and then import
+    * When prompted with the Unity Package windows to select items to be imported, only tick the boxes to Plugins/Win/OVRPlugin.dll and Plugins/Win64/OVRPlugin.dll
+    * Click "Import", wait for it to finish, then restart Unity and update OVRPlugin. Restart again and it should be fixed.
