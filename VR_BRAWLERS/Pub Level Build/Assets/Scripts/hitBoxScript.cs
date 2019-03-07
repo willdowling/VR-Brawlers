@@ -86,7 +86,7 @@ public class hitBoxScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnDrawGizmos();
+      
         if (_state == ColliderState.Closed) { return; }
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, sphereSize, mask);
