@@ -31,7 +31,7 @@ MonoBehaviour:
     linkText: 
     url: 
   - heading: 
-    text: 'Visit the Unity XR manual pages for more information about VR: '
+    text: 'Visit the Unity XR manual pages,` for more information about VR: '
     linkText: VR Overview
     url: 'https://docs.unity3d.com/Manual/VROverview.html'
   - heading: 
