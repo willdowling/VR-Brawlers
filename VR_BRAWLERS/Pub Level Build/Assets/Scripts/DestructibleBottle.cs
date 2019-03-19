@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class DestructibleBottle : MonoBehaviour
 {
-    public GameObject destroyedVersion;
+    [SerializeField] GameObject destroyedVersion;
+    [SerializeField] float explodeAmount = 5;
+
+    private Rigidbody rb;
+
+    private Vector3 pos, lastPos, lastVel;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 3.25 && collision.collider.gameObject.tag != "Controller")
+        //Debug.Log(pos + ", " + lastPos);
+        if (collision.relativeVelocity.magnitude > 3.25f && collision.collider.gameObject.tag != "Controller")
         {
-            Instantiate(destroyedVersion, transform.position, transform.rotation);
+            //Vector3 bottleVel = rb.velocity;
+            Debug.Log("Bottle Vel: " + lastVel);
+
+            Transform destroyed = Instantiate(destroyedVersion, transform.position, transform.rotation).transform;
+            foreach (Transform shard in destroyed) {
+                Vector3 centreToThis = (shard.position - destroyed.position).normalized;
+                shard.GetComponent<Rigidbody>().AddForce((centreToThis * explodeAmount) + lastVel, ForceMode.Impulse);
+            }
+
             Destroy(gameObject);
         }
     }
@@ -23,6 +42,12 @@ public class DestructibleBottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        pos = transform.position;
+    }
+
+    void LateUpdate()
+    {
+        lastPos = pos;
+        lastVel = rb.velocity;
     }
 }
