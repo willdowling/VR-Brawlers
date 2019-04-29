@@ -12,6 +12,8 @@ TagManager:
   - ExcludeTeleport
   - Torso
   - Head
+  - Bottle
+  - Controllers
   layers:
   - Default
   - TransparentFX
