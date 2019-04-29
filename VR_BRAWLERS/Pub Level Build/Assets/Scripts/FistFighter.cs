@@ -28,6 +28,9 @@ public class FistFighter : MonoBehaviour
 
     public Collider attackHitbox;
 
+    
+
+    
     private void CheckGizmoColor()
     { 
         switch (_state)
@@ -68,10 +71,13 @@ public class FistFighter : MonoBehaviour
                 foreach (Collider p in transform.root.GetComponentsInChildren<Collider>())
                     if (c == p) isOk = false;
                 if(isOk)
+                
                 Debug.Log(c.name);
                 // We should do something with the colliders
             }
         }
+
+
     }
         private void OnDrawGizmos()
     {
@@ -86,8 +92,8 @@ public class FistFighter : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {	
+       
     }
     // Update is called once per frame
     void Update()
