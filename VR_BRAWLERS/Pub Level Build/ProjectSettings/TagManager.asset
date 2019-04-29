@@ -12,7 +12,7 @@ TagManager:
   - ExcludeTeleport
   - Torso
   - Head
-  - bottle
+  - Bottle
   - Controllers
   layers:
   - Default
